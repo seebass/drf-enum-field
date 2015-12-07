@@ -1,9 +1,10 @@
+from django.utils.translation import ugettext_lazy as _
 from rest_framework.fields import ChoiceField
 
 
 class EnumField(ChoiceField):
     default_error_messages = {
-        'invalid': ("No matching enum type.",)
+        'invalid': _("No matching enum type.")
     }
 
     def __init__(self, **kwargs):
