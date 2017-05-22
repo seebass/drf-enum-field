@@ -3,7 +3,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='drf-enum-field',
-    version="0.9.1",
+    version="0.9.2",
     url='https://github.com/seebass/drf-enum-field',
     license='MIT',
     description='EnumField support for Django REST Framework 3',
