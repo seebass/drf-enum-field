@@ -18,7 +18,8 @@ class EnumField(ChoiceField):
                 return choice
         self.fail('invalid')
 
-    def to_representation(self, value):
+    @staticmethod
+    def to_representation(value):
         if not value:
             return None
-        return value.name
+        return value
