@@ -1,17 +1,17 @@
 drf-enum-field
-=================
+==============
 Extension for Django REST Framework 3 which allows for using EnumField from https://github.com/hzdg/django-enumfields.
 
 ## Setup ##
 
 	pip install drf-enum-field
 
-## Requirement ##
+## Requirements ##
 
 * Python 2.7+
-* Django 1.6+
-* Django REST Framework 3
-* django-enumfields 0.7+
+* Django 2.2+
+* Django REST Framework 3.9
+* django-enumfields 0.9+
 
 ## Features ##
 
@@ -19,7 +19,7 @@ By using the **EnumFieldSerializerMixin** EnumFields are serialized and deserial
 
 ## Example ##
 
-Model:
+### Model ###
 
 	class TestResource(models.Model):
     	class Type(Enum):
@@ -29,22 +29,20 @@ Model:
     	type = EnumField(Type)
     	name = models.CharField(max_length=255)
 
-    	
-		
-Serializer:
-		
+### Serializer ###
+
 	class TestResourceSerializer(EnumFieldSerializerMixin, ModelSerializer):
 			class Meta:
         		model = TestResource
-        	
-View:
-	
+
+### View ###
+
 	class TestResourceViewSet(ModelViewSet):
     	serializer_class = TestResourceSerializer
     	queryset = TestResource.objects.all()
-        		
-Result:
-		
+
+### Result ###
+
 		{
 			"id": 1,
 			"name": "Test-Resource",
