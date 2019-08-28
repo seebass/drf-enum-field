@@ -16,10 +16,10 @@ class EnumField(ChoiceField):
         for choice in self.enum_type:
             if choice.name == data or choice.value == data:
                 return choice
-        self.fail('invalid')
+        self.fail("invalid")
 
-    @staticmethod
-    def to_representation(value):
-        if not value:
-            return None
+    def to_representation(self, value):
+        # this can be either an enum member or a "choice", i.e. a str
+        if hasattr(value, "value"):
+            return value.value
         return value
