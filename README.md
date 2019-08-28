@@ -9,7 +9,7 @@ Extension for Django REST Framework 3 which allows for using EnumField from http
 ## Requirements ##
 
 * Python 2.7+
-* Django 2.2+
+* Django 1.6+
 * Django REST Framework 3.9
 * django-enumfields 0.9+
 
